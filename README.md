@@ -6,7 +6,7 @@ A simple CLI tool to download videos from YouTube either in mp4 or mp3 format.
 
 Clone the repository and run the following command in the root directory:
 
-```bash
+```console
 pip install -r requirements.txt
 ```
 
@@ -14,26 +14,26 @@ pip install -r requirements.txt
 
 Install the tool locally:
 
-```bash
+```console
 pip install .
 ```
 
 Or if you plan to make changes to the code, install it in editable mode:
 
-```bash
+```console
 pip install -e .
 ```
 
 To confirm that the tool is installed, run the one of the following commands:
 
-```bash
+```console
 yt-extractor -h
 yte -h
 ```
 
 ## Usage
 
-```
+```console
 yt-extractor [-h] [--path PATH] [-mp3] url
 yte [-h] [--path PATH] [-mp3] url
 
@@ -41,7 +41,7 @@ positional arguments:
   url          URL of the video to download.
 
 options:
-  -h, --help   show this help message and exit
+  -h, --help   Show this help message and exit
   --path PATH  Path to store the downloaded file (default: current_directory/out/).
   -mp3         Convert the video to MP3 format.
 ```
@@ -50,13 +50,13 @@ options:
 
 To download a video, run the following command:
 
-```bash
+```console
 yt-extractor <video_url>
 ```
 
 If you want to download the video in mp3 format, run the following command:
 
-```bash
+```console
 yt-extractor <video_url> -mp3
 ```
 
@@ -64,7 +64,7 @@ yt-extractor <video_url> -mp3
 
 To download the video in a specific directory, run the following command:
 
-```bash
+```console
 yt-extractor <video_url> --path <path_to_directory>
 yt-extractor <video_url> --path <path_to_directory> -mp3
 ```
