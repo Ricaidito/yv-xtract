@@ -26,6 +26,7 @@ class VideoDownloader:
         os.remove(f"{self.__output_path}{self.__yt.title}.mp4")
 
     def download(self):
+        print("Downloading...")
         self.__download_video()
         if self.__isMP3:
             self.__convert_to_mp3()
