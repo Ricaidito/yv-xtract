@@ -1,4 +1,4 @@
-# YouTube-Extractor
+# YouTube_Extractor
 
 A simple CLI tool to download videos from YouTube either in mp4 or mp3 format.
 

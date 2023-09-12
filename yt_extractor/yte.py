@@ -1,5 +1,5 @@
 import argparse
-from video_downloader import VideoDownloader
+from yt_extractor.video_downloader import VideoDownloader
 
 
 def parse_arguments():
