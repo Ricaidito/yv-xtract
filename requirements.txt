@@ -11,5 +11,6 @@ Pillow==10.0.0
 proglog==0.1.10
 pytube==15.0.0
 requests==2.31.0
+termcolor==2.3.0
 tqdm==4.66.1
 urllib3==2.0.4
