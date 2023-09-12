@@ -17,11 +17,11 @@ def parse_arguments():
     )
     parser.add_argument(
         "--start-time",
-        help="Start time of the video clip in HH:MM:SS format (e.g., 00:02:30).",
+        help="Time from where the video will start (Format: HH:MM:SS [e.g., 00:02:30]).",
     )
     parser.add_argument(
         "--end-time",
-        help="End time of the video clip in HH:MM:SS format (e.g., 00:05:00).",
+        help="Time where the video will end (Format: HH:MM:SS [e.g., 00:05:00]).",
     )
     return parser.parse_args()
 
