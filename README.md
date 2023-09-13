@@ -84,3 +84,7 @@ To download the video in a specific directory, you can add the `--path` flag as 
 ```console
 yt-extractor <video_url> --path <path_to_directory>
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
