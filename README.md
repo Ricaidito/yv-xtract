@@ -2,7 +2,7 @@
 
 A simple CLI tool to download videos from YouTube either in mp4 or mp3 format and with the ability to crop them.
 
-## Installation
+## Local installation
 
 Clone the repository and run the following command in the root directory:
 
