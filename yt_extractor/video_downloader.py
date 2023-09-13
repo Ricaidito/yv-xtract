@@ -12,7 +12,7 @@ class VideoDownloader:
         start_time: str = None,
         end_time: str = None,
         isMP3: bool = False,
-    ):
+    ) -> None:
         self.__url = video_url
         self.__yt = YouTube(self.__url)
         self.__current_filename = self.__yt.title
@@ -21,19 +21,31 @@ class VideoDownloader:
         self.__start_time = start_time
         self.__end_time = end_time
 
-    def __clean_up_default_output_path(self):
+    def __clean_up_default_output_path(self) -> None:
         if os.path.isdir("./out/"):
             if len(os.listdir("./out/")) != 0:
                 for file in os.listdir("./out/"):
                     os.remove(f"./out/{file}")
 
-    def __download_video(self):
+    def __download_video(self) -> None:
         stream = self.__yt.streams.get_highest_resolution()
         if self.__isMP3:
             stream = self.__yt.streams.get_audio_only()
         stream.download(output_path=self.__output_path)
 
-    def __cut_video(self):
+    def __time_to_seconds(self, time: str) -> int:
+        h, m, s = map(int, time.split(":"))
+        return h * 3600 + m * 60 + s
+
+    def __check_time_in_bounds(self) -> None:
+        video_duration = self.__yt.length
+        end_time_seconds = self.__time_to_seconds(self.__end_time)
+
+        if end_time_seconds > video_duration:
+            self.__clean_up_video()
+            raise Exception("End time is greater than video duration.")
+
+    def __cut_video(self) -> None:
         if self.__start_time is None and self.__end_time is None:
             return
 
@@ -55,6 +67,8 @@ class VideoDownloader:
         else:
             end_seconds = None
 
+        self.__check_time_in_bounds()
+
         ffmpeg_extract_subclip(
             f"{self.__output_path}{self.__yt.title}.mp4",
             start_seconds,
@@ -64,16 +78,16 @@ class VideoDownloader:
         self.__clean_up_video()
         self.__current_filename = f"{self.__yt.title}(clip)"
 
-    def __convert_to_mp3(self):
+    def __convert_to_mp3(self) -> None:
         ffmpeg_extract_audio(
             f"{self.__output_path}{self.__current_filename}.mp4",
             f"{self.__output_path}{self.__current_filename}.mp3",
         )
 
-    def __clean_up_video(self):
+    def __clean_up_video(self) -> None:
         os.remove(f"{self.__output_path}{self.__current_filename}.mp4")
 
-    def download(self):
+    def download(self) -> None:
         self.__clean_up_default_output_path()
         print_processing("Downloading video...")
         self.__download_video()
