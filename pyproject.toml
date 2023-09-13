@@ -25,5 +25,5 @@ dependencies= ["pytube", "moviepy"]
 "Repository" = "https://github.com/Ricaidito/youtube_extractor.git"
 
 [project.scripts]
-yte = "yt_extractor:yte"
-yt-extractor = "yt_extractor:yte"
+yte = "yt_extractor.yte:main"
+yt-extractor = "yt_extractor.yte:main"
