@@ -1,6 +1,6 @@
 from pytube import YouTube
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_audio, ffmpeg_extract_subclip
-from terminal_utils import print_success, print_processing
+from yt_extractor.terminal_utils import print_success, print_processing
 import os
 
 

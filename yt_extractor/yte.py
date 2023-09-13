@@ -1,5 +1,5 @@
-from terminal_utils import parse_arguments, print_error
-from video_downloader import VideoDownloader
+from yt_extractor.terminal_utils import parse_arguments, print_error
+from yt_extractor.video_downloader import VideoDownloader
 
 
 def main() -> None:
