@@ -20,9 +20,9 @@ classifiers = [
 dependencies= ["pytube", "moviepy"]
 
 [project.urls]
-"Homepage" = "https://github.com/Ricaidito/youtube_extractor"
-"Bug Tracker" = "https://github.com/Ricaidito/youtube_extractor/issues"
-"Repository" = "https://github.com/Ricaidito/youtube_extractor.git"
+"Homepage" = "https://github.com/Ricaidito/yv-xtract"
+"Bug Tracker" = "https://github.com/Ricaidito/yv-xtract/issues"
+"Repository" = "https://github.com/Ricaidito/yv-xtract.git"
 
 [project.scripts]
 yvx = "yv_xtract.yte:main"
