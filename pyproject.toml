@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "yt-extractor"
-version = "0.0.1"
+name = "yt_extractor"
+version = "1.0"
 authors = [
   { name="Ricardo Ramirez", email="ricaiditodev@gmail.com" },
 ]
