@@ -17,7 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-dependencies= ["pytube", "moviepy"]
+dependencies= ["pytube", "moviepy", "termcolor"]
 
 [project.urls]
 "Homepage" = "https://github.com/Ricaidito/yv-xtract"

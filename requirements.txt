@@ -4,7 +4,7 @@ colorama==0.4.6
 decorator==4.4.2
 idna==3.4
 imageio==2.31.3
-imageio-ffmpeg==0.4.8
+imageio-ffmpeg==0.4.9
 moviepy==1.0.3
 numpy==1.25.2
 Pillow==10.0.0
