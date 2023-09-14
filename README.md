@@ -2,6 +2,8 @@
 
 A simple CLI tool to download videos from YouTube either in mp4 or mp3 format and with the ability to crop them.
 
+Developed by [Ricaidito](https://github.com/Ricaidito).
+
 ## Usage
 
 ```console
@@ -45,7 +47,7 @@ And if you want the video only until certain time, you can specify the end time 
 yvx <video_url> --end-time 00:05:00
 ```
 
-**_Note: All methods shown here will download the video either in mp4 or mp3 format and store it in a folder named "out" in the tool directory._**
+**_Note: All methods shown here will download the video either in mp4 or mp3 format and store it in a folder named "out" in the user directory._**
 
 To download the video in a specific directory, you can add the `--path` flag as shown below:
 
