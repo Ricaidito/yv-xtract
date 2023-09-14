@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "yv-xtract"
+name = "yv_xtract"
 version = "1.0"
 authors = [
   { name="Ricardo Ramirez", email="ricaiditodev@gmail.com" },
@@ -25,4 +25,4 @@ dependencies= ["pytube", "moviepy"]
 "Repository" = "https://github.com/Ricaidito/youtube_extractor.git"
 
 [project.scripts]
-yvx = "yv-xtract.yte:main"
+yvx = "yv_xtract.yte:main"

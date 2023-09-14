@@ -1,4 +1,4 @@
-# YouTubeVideo-Xtractor
+# YouTube Video Xtractor
 
 A simple CLI tool to download videos from YouTube either in mp4 or mp3 format and with the ability to crop them.
 
