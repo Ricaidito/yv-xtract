@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yv_xtract"
-version = "1.1"
+version = "1.2"
 authors = [
   { name="Ricardo Ramirez", email="ricaiditodev@gmail.com" },
 ]
 license = {file = "LICENSE"}
 description = "CLI tool to download YouTube videos"
-keywords = ["python", "youtube", "video", "downloader", "cli", "mp3", "mp4"]
+keywords = ["python", "youtube", "video", "downloader", "cli", "mp3", "mp4", "gif"]
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -20,9 +20,8 @@ classifiers = [
 dependencies= ["pytube", "moviepy", "termcolor"]
 
 [project.urls]
-"Homepage" = "https://github.com/Ricaidito/yv-xtract"
-"Bug Tracker" = "https://github.com/Ricaidito/yv-xtract/issues"
 "Repository" = "https://github.com/Ricaidito/yv-xtract.git"
+"Bug Tracker" = "https://github.com/Ricaidito/yv-xtract/issues"
 
 [project.scripts]
 yvx = "yv_xtract.yte:main"

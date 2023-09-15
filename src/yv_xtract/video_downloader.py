@@ -1,6 +1,7 @@
 from pytube import YouTube
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_audio, ffmpeg_extract_subclip
 from yv_xtract.terminal_utils import print_success, print_processing
+from moviepy.editor import VideoFileClip
 import os
 
 
@@ -12,6 +13,7 @@ class VideoDownloader:
         start_time: str = None,
         end_time: str = None,
         isMP3: bool = False,
+        isGIF: bool = False,
     ) -> None:
         self.__url = video_url
         self.__yt = YouTube(self.__url)
@@ -20,6 +22,10 @@ class VideoDownloader:
         self.__isMP3 = isMP3
         self.__start_time = start_time
         self.__end_time = end_time
+        self.__isGIF = isGIF
+
+    def __clean_up_video(self) -> None:
+        os.remove(f"{self.__output_path}{self.__current_filename}.mp4")
 
     def __download_video(self) -> None:
         stream = self.__yt.streams.get_highest_resolution()
@@ -82,13 +88,20 @@ class VideoDownloader:
             f"{self.__output_path}{self.__current_filename}.mp3",
         )
 
-    def __clean_up_video(self) -> None:
-        os.remove(f"{self.__output_path}{self.__current_filename}.mp4")
+    def __convert_to_gif(self) -> None:
+        with VideoFileClip(
+            f"{self.__output_path}{self.__current_filename}.mp4"
+        ) as clip:
+            clip.write_gif(f"{self.__output_path}{self.__current_filename}.gif")
 
     def download(self) -> None:
         print_processing("Downloading video...")
         self.__download_video()
         self.__cut_video()
+        if self.__isGIF:
+            print_processing("Converting to GIF...")
+            self.__convert_to_gif()
+            self.__clean_up_video()
         if self.__isMP3:
             print_processing("Converting to MP3...")
             self.__convert_to_mp3()

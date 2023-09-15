@@ -15,10 +15,15 @@ def main() -> None:
     given_path: str | None = config.check_path(args.path)
     default_path: str | None = config.check_path(args.set_path)
     mp3: bool = args.mp3
+    gif: bool = args.gif
     start_time: str | None = args.start_time
     end_time: str | None = args.end_time
 
     path_to_save: str = ""
+
+    if mp3 and gif:
+        print_error("Cannot convert to MP3 and GIF at the same time.")
+        return
 
     if not config.check_if_config_exists():
         config.create_config_file()
@@ -40,6 +45,7 @@ def main() -> None:
             start_time=start_time,
             end_time=end_time,
             isMP3=mp3,
+            isGIF=gif,
         ).download()
     except Exception as err:
         print_error(err)
