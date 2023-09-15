@@ -22,6 +22,10 @@ def parse_arguments() -> Namespace:
         "--end-time",
         help="Time where the video will end (Format: HH:MM:SS [e.g., 00:05:00]).",
     )
+    parser.add_argument(
+        "--set-path",
+        help="Set the default path to store the downloaded file.",
+    )
     return parser.parse_args()
 
 
@@ -35,3 +39,7 @@ def print_success(message):
 
 def print_processing(message):
     print(colored(f"[PROCESSING]: {message}", "yellow"))
+
+
+def print_info(message):
+    print(colored(f"[INFO]: {message}", "blue"))

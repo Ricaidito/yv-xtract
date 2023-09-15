@@ -21,12 +21,6 @@ class VideoDownloader:
         self.__start_time = start_time
         self.__end_time = end_time
 
-    def __clean_up_default_output_path(self) -> None:
-        if os.path.isdir("./out/"):
-            if len(os.listdir("./out/")) != 0:
-                for file in os.listdir("./out/"):
-                    os.remove(f"./out/{file}")
-
     def __download_video(self) -> None:
         stream = self.__yt.streams.get_highest_resolution()
         if self.__isMP3:
@@ -34,6 +28,8 @@ class VideoDownloader:
         stream.download(output_path=self.__output_path)
 
     def __time_to_seconds(self, time: str) -> int:
+        if time is None:
+            return 0
         h, m, s = map(int, time.split(":"))
         return h * 3600 + m * 60 + s
 
@@ -48,6 +44,8 @@ class VideoDownloader:
     def __cut_video(self) -> None:
         if self.__start_time is None and self.__end_time is None:
             return
+
+        video_duration = self.__yt.length
 
         if self.__start_time:
             start_time_parts = list(map(int, self.__start_time.split(":")))
@@ -65,7 +63,7 @@ class VideoDownloader:
                 end_time_parts[0] * 3600 + end_time_parts[1] * 60 + end_time_parts[2]
             )
         else:
-            end_seconds = None
+            end_seconds = video_duration
 
         self.__check_time_in_bounds()
 
@@ -88,7 +86,6 @@ class VideoDownloader:
         os.remove(f"{self.__output_path}{self.__current_filename}.mp4")
 
     def download(self) -> None:
-        self.__clean_up_default_output_path()
         print_processing("Downloading video...")
         self.__download_video()
         self.__cut_video()

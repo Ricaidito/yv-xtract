@@ -7,3 +7,4 @@ build/
 out/
 dist/
 .pypirc
+yvx_config.json
