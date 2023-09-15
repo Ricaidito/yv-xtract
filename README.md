@@ -7,7 +7,7 @@ Developed by [Ricaidito](https://github.com/Ricaidito).
 ## Usage
 
 ```console
-yvx [-h] [--path PATH] [-mp3] [--start-time START_TIME] [--end-time END_TIME] url
+yvx [-h] [--path PATH] [-mp3] [--start-time START_TIME] [--end-time END_TIME] [--set-path SET_PATH] url
 
 positional arguments:
   url                   URL of the video to download.
@@ -19,35 +19,34 @@ options:
   --start-time START_TIME
                         Time from where the video will start (Format: HH:MM:SS [e.g., 00:02:30]).
   --end-time END_TIME   Time where the video will end (Format: HH:MM:SS [e.g., 00:05:00]).
+  --set-path SET_PATH   Set the default path to store the downloaded files.
 ```
 
 ### Examples:
 
-To download a video, run the following command:
+To download a video, execute the following command:
 
 ```console
 yvx <video_url>
 ```
 
-If you want to download the video in mp3 format, run the following command:
+Download the video in mp3 format:
 
 ```console
 yvx <video_url> -mp3
 ```
 
-You can also extract a clip from the video by specifying the start and end time of the clip. For example, to extract a clip from 2:30 to 5:00, run the following command:
+To extract a clip from 2:30 to 5:00:
 
 ```console
 yvx <video_url> --start-time 00:02:30 --end-time 00:05:00
 ```
 
-And if you want the video only until certain time, you can specify the end time only. For example, to download the video until 5:00, run the following command:
+You also can specify the end time only. For example, to download the video until 5:00:
 
 ```console
 yvx <video_url> --end-time 00:05:00
 ```
-
-**_Note: All methods shown here will download the video either in mp4 or mp3 format and store it in a folder named "out" in the user directory._**
 
 To download the video in a specific directory, you can add the `--path` flag as shown below:
 

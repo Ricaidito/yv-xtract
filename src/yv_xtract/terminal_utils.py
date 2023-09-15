@@ -24,7 +24,7 @@ def parse_arguments() -> Namespace:
     )
     parser.add_argument(
         "--set-path",
-        help="Set the default path to store the downloaded file.",
+        help="Set the default path to store the downloaded files.",
     )
     return parser.parse_args()
 
